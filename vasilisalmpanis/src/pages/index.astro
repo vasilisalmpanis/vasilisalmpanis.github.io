@@ -1,0 +1,52 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<h1>🧑‍🚀 Hi there,</h1>
+			<h1>I'm Vasilis Almpanis.</h1>
+			<p>
+			</p>
+			<p>
+				I'm a software engineer a with focus on systems programming.
+				Currently I am working at <a href="https://cloudlinux.com">Cloudlinux</a> as a Junior Kernel Developer
+				for a kernel livepatching solution used in enterprise servers.
+			</p>
+			<p>
+				I decided to document my programming journey and share it with others hence the name
+				thinking out loud. You can read my about my newest adventures <a href="/blog">here</a>.
+			</p>
+			<p>
+				Usually you will find me in neovim trying to hack something together<br>
+				This is what I spent my time on:
+			</p>
+			<p>
+				<ul>
+					<li>
+						<a href="https://github.com/vasilisalmpanis/kfs/">kfs</a>: A simple UNIX like operating system written from scratch in Zig.
+					</li>
+					<li>
+						<a href="https://github.com/vasilisalmpanis?tab=repositories">/projects</a> My own personal projects that I use for learning purposes.
+					</li>
+					<li>
+						Good ol classic paperback books. Currently reading
+						<a href="https://www.goodreads.com/book/show/239240.UNIX_Network_Programming_Volume_1?from_search=true&from_srp=true&qid=DseaKJwxRH&rank=2">Unix Network Programming Vol I</a>
+						and 
+						<a href="https://www.goodreads.com/book/show/263436.Linux_Device_Drivers?from_search=true&from_srp=true&qid=9jr5CqTplM&rank=1">Linux Device Drivers</a>.
+					</li>
+				</ul>
+			</p>
+		</main>
+		<Footer />
+	</body>
+</html>
