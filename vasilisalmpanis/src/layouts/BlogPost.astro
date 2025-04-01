@@ -19,6 +19,9 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 				max-width: 100%;
 				margin: 0;
 			}
+			main:last-child {
+				width: 100%;
+			}
 			.hero-image {
 				width: 100%;
 			}
@@ -51,6 +54,12 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 			.last-updated-on {
 				font-style: italic;
 			}
+			.comments {
+				width: 50%;
+				margin: 0 auto; /* This centers the div horizontally */
+				max-width: 720px; /* Match the max-width of your prose section */
+				padding: 1em
+			}
 		</style>
 	</head>
 
@@ -58,11 +67,9 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 		<Header />
 		<main>
 			<article>
-				<div class="hero-image">
-					{heroImage && <img width={1020} height={510} src={heroImage} alt="" />}
-				</div>
 				<div class="prose">
 					<div class="title">
+						<h1>{title}</h1>
 						<div class="date">
 							<FormattedDate date={pubDate} />
 							{
@@ -73,13 +80,35 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 								)
 							}
 						</div>
-						<h1>{title}</h1>
 						<hr />
 					</div>
+					<div class="hero-image">
+						{heroImage && <img width={510} height={255} src={heroImage} alt="" />}
+					</div>
+					<br/>
 					<slot />
 				</div>
 			</article>
+			<div class="comments">
+				<script src="https://giscus.app/client.js"
+				        data-repo="vasilisalmpanis/vasilisalmpanis.github.io"
+				        data-repo-id="R_kgDON_7IzA"
+				        data-category="Blog Comments"
+				        data-category-id="DIC_kwDON_7IzM4Coqnp"
+				        data-mapping="url"
+				        data-strict="0"
+				        data-reactions-enabled="1"
+				        data-emit-metadata="0"
+				        data-input-position="bottom"
+				        data-theme="light"
+				        data-lang="en"
+				        data-loading="lazy"
+				        crossorigin="anonymous"
+				        async>
+				</script>
+			</div>
 		</main>
 		<Footer />
 	</body>
 </html>
+
