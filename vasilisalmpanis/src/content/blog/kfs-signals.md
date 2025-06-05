@@ -7,7 +7,7 @@ heroImage: '/signals.png'
 
 
 #### Introduction
-**Signals** are standardized messages sent to a executing program meant to trigger specific behavior
+**Signals** are standardized messages sent to a executing program meant to trigger specific behavior.
 
 In this article we will be talking about Standard POSIX Signals and not Linux Real-Time signals.
 In order to implement signals there are some prerequisites that need to be fullfilled. The kernel
@@ -50,7 +50,7 @@ According to the manual
 in which the signals are delivered is unspecified.***
 
 **kSigaction** will be the struct that will hold the 31 signal handlers.
-The handlers according to the specification are simple function that take
+The handlers according to the specification are simple functions that take
 the signal number as argument and return **void**.
 
 ```zig
@@ -81,7 +81,7 @@ const kSigaction = struct {
 }
 ```
 
-Of course sigaction as defined in the C standard library has other members but
+Of course `sigaction` as defined in the C standard library has other members but
 the full implementation of it is left to the reader as exercise.
 
 #### Kill
@@ -121,7 +121,7 @@ pub fn kill(pid: u32, sig: u32) i32 {
 Now there could be bugs hiding in this code in case this task is preempted
 in between getting the task and setting the bit, and in this case locking
 and refcounting would help us solve these problems, but our goal for this
-blog post is to get the general idea of how to implement signals and not
+blog post is to get the general idea of how to implement signals and not to
 present a production ready solution.
 
 
